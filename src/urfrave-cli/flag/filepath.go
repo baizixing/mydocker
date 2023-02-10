@@ -1,14 +1,14 @@
-package main
+package flag
 
 import (
 	"fmt"
 	"log"
 	"os"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
-func main() {
+func FilePaths() {
 	var password string
 	app := &cli.App{
 
@@ -18,7 +18,7 @@ func main() {
 				Usage:       "use for database password",
 				Aliases:     []string{"p"},
 				Destination: &password,
-				FilePaths:   []string{"password.txt"},
+				FilePath:    "password.txt",
 				Required:    true,
 			},
 		},

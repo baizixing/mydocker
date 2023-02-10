@@ -1,4 +1,4 @@
-package newCh
+package try
 
 import (
 	"fmt"

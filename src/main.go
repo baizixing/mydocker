@@ -5,7 +5,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/urfave/cli"
+	"component"
+
+	"github.com/urfave/cli/v2"
 )
 
 func main() {
@@ -14,8 +16,8 @@ func main() {
 		Name:  "mydocker",
 		Usage: "for docker learning",
 		Commands: []*cli.Command{
-			&mydockerRunCommand,
-			&mydockerInitCommand,
+			&component.MydockerRunCommand,
+			&component.MydockerInitCommand,
 		},
 	}
 

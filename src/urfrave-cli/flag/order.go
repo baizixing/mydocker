@@ -1,4 +1,4 @@
-package main
+package flag
 
 import (
 	"fmt"
@@ -6,10 +6,10 @@ import (
 	"os"
 	"sort"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
-func main() {
+func order() {
 	app := &cli.App{
 		Flags: []cli.Flag{
 			&cli.StringFlag{

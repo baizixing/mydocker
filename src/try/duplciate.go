@@ -1,4 +1,4 @@
-package duplciate
+package try
 
 import (
 	"bufio"

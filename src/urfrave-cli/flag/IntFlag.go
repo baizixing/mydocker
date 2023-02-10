@@ -1,14 +1,14 @@
-package main
+package flag
 
 import (
 	"fmt"
 	"log"
 	"os"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
-func main() {
+func IntFlag() {
 	var number int
 	app := &cli.App{
 		Flags: []cli.Flag{

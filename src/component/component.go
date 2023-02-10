@@ -1,4 +1,4 @@
-package main
+package component
 
 import (
 	"fmt"
@@ -6,10 +6,10 @@ import (
 	"os/exec"
 	"syscall"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
-var mydockerRunCommand = cli.Command{
+var MydockerRunCommand = cli.Command{
 	Name:    "runCommand",
 	Usage:   "use for run command, create all subnamespace",
 	Aliases: []string{"run"},
@@ -25,7 +25,7 @@ var mydockerRunCommand = cli.Command{
 		// 检查输入是否有问题
 		if ctx.NArg() < 1 {
 			fmt.Printf("input args must more than 1.")
-			return fmt.Errorf("input args must more than 1.")
+			return fmt.Errorf("input args must more than 1")
 		}
 
 		// 调用Run函数
@@ -35,7 +35,7 @@ var mydockerRunCommand = cli.Command{
 	},
 }
 
-var mydockerInitCommand = cli.Command{
+var MydockerInitCommand = cli.Command{
 	Name:    "runCommand",
 	Usage:   "use for mydocker init operations like mounting the /proc after create all subnamespace!",
 	Aliases: []string{"init"},

@@ -1,4 +1,4 @@
-package echol2
+package try
 
 import (
 	"fmt"

@@ -1,14 +1,14 @@
-package main
+package flag
 
 import (
 	"fmt"
 	"log"
 	"os"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
-func main() {
+func flag() {
 	var language string
 	// var count bool
 	app := &cli.App{

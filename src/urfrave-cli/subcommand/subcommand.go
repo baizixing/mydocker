@@ -5,10 +5,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
-func main() {
+func sub() {
 	app := &cli.App{
 		Commands: []*cli.Command{
 			{
@@ -33,7 +33,7 @@ func main() {
 				Name:    "template",
 				Aliases: []string{"t"},
 				Usage:   "options for task templates",
-				Commands: []*cli.Command{
+				Subcommands: []*cli.Command{
 					{
 						Name:  "add",
 						Usage: "add a new template",
