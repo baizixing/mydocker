@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -12,7 +11,7 @@ import (
 
 func main() {
 	//创建cli app，本次总共两个command，run和init
-	app := cli.App{
+	app := &cli.App{
 		Name:  "mydocker",
 		Usage: "for docker learning",
 		Commands: []*cli.Command{
@@ -24,5 +23,5 @@ func main() {
 	if err := app.Run(os.Args); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("hello, world!")
+
 }
