@@ -6,7 +6,6 @@ import (
 	"os"
 	"os/exec"
 	"syscall"
-	"time"
 
 	"github.com/urfave/cli/v2"
 )
@@ -65,8 +64,9 @@ func InitProcess(command string) error {
 		return err
 	}
 
-	fmt.Println("...............sleep begin.................")
-	time.Sleep(time.Duration(10) * time.Second)
+	// use for test
+	// fmt.Println("...............sleep begin.................")
+	// time.Sleep(time.Duration(10) * time.Second)
 
 	// 通过syscall.exec（）保证docker的进程号为1
 	syscall.Mount("proc", "/proc", "proc", uintptr(defaultMountFlags), "")
@@ -110,8 +110,8 @@ func CreateNewProcess(itFlag bool, command string) *exec.Cmd {
 
 /*
 run command, 步骤如下：
- 1. 宿主机fork一个新的进程，之后挂载 /proc目录，并配置
- 3. 判断it flag是否为true，true则将容器进程后台运行
+ 1. 配置一个新的终端进程，包括namespace的系统参数设置，是否需要隐藏新终端进程的输出等
+ 2. 终端启动后，开始初始化该进程内的环境，包括/proc挂载等，之后再执行command
 */
 func Run(itFlag bool, command string) {
 
