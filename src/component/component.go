@@ -70,7 +70,7 @@ func InitProcess(command string) error {
 
 	// 通过syscall.exec（）保证docker的进程号为1
 	syscall.Mount("proc", "/proc", "proc", uintptr(defaultMountFlags), "")
-	if err := syscall.Exec("greet", []string{command}, os.Environ()); err != nil {
+	if err := syscall.Exec(command, []string{command}, os.Environ()); err != nil {
 		fmt.Println("exec init command wrong !!")
 		log.Fatal(err.Error())
 	}
