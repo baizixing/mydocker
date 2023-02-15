@@ -3,7 +3,6 @@ module mydocker
 go 1.20
 
 require (
-	github.com/urfave/cli v1.22.12
 	github.com/urfave/cli/v2 v2.24.3
 )
 
