@@ -13,5 +13,8 @@ require (
 )
 
 
-require component v0.0.0
-replace component => ./src/component
+// require component v0.0.0
+// replace component => ./src/component
+
+// require subsystem v0.0.0
+// replace subsystem => ./src/subsystem
