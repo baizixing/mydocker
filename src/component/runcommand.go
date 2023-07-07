@@ -132,7 +132,7 @@ func NewPipe() (*os.File, *os.File, error) {
 
 func sendInitCommand(comArray []string, writePipe *os.File) {
 	command := strings.Join(comArray, " ")
-	fmt.Printf("command all is %s", command)
+	fmt.Printf("command all is %s \n", command)
 	writePipe.WriteString(command)
 	writePipe.Close()
 }
